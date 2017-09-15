@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <style>
+            div{
+                color: #ff0000;
+                font-size:20px;
+                font-family:serif
+                }
+            p{
+                color: rgb(190,170,30);
+                font-family: 'Dancing Script';
+                font-size:30px;
+                font-weight:bold;
+                text-decoration:underline
+                }
+
+            span{font-size:20px} /*tag*/
+            #test{font-size:50px;color:aqua} /*id*/
+            #test2{font-size:50px;color:red}
+            .test{background:#00ff00} /*class*/
+            .test2{background:yellow}
+            /*tag<class<id<tag에 직접기입 우선순위*/
+            h1 div span{color:red} /*space->자손*/
+            hi span{background:gray}
+            h1 > span{text-decoration:underline} /*직계자손만*/
+            
+        </style>
+    </head>
+    <body>
+        <h1>text
+            <div><span>span1</span>span1</div>
+            <span>span2</span>
+        </h1>
+        <span>a</span><span>b</span>
+        <span>a</span><span id="test" class="test2">b</span>
+        <span>a</span><span class="test">b</span>
+        <span>a</span><span class="test">b</span>
+        <span>a</span><span id="test2">b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+        <span>a</span><span>b</span>
+
+        <div>test1</div>
+        <div>test2</div>
+        <p>test3</p>
+        <p>test4</p>
+        <section style="color: blue;font-size:800%">section1
+            <section style="font-size:70%">section2
+                <section style="font-size:70%">section3
+                </section>
+            </section>
+        </section>
+        
+    </body>
+    
+</html>
