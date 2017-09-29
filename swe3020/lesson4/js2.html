@@ -62,6 +62,36 @@
         f2('greeting');
         f2();
 
+        var o1=new Object();
+        o1.name='hika';
+        o1.role='tutor';
+        var o2={name:'h',role:'student'}
+        console.log(o1);
+        console.log(o2);
+
+        var arr1=new Array();
+        arr1[0]=3;
+        arr1[1]=5;
+        var arr2=[10,20];
+        console.log(arr1);
+        console.log(arr2);
+
+        //함수 리터럴  function함수이름선택(인자,인자...){문}
+        var f1=function double(v){return v*2;};
+        console.log(f1(5));
+
+        var double=f1;//값이므로 다른 변수에 할당할수 있음
+
+        var f3=function(f,v){
+            return f(v);
+        };
+        console.log(f3(double,5))
+
+        
+
+        
+
+
         
         </script>
     </body>
