@@ -1,0 +1,68 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+        //제어문
+        //if문 : if 공백포함가능 (식) 문
+        var a = 3;
+        if(a > 1)console.log("greater");
+        if    (a > 2)    console.log("greater than 2");
+        if(a>2.5){console.log("greater than 2.5");console.log("greater than 2.5");}
+        if(a>1
+        ) console.log("greater than 1");//')' 다음에 엔터치면 X
+        //if else문  if(식)문 else문
+        if (a>4) console.log("greater than 4"); 
+        else console.log("less than 4");
+        if (a>3){
+            console.log("greater than 3");
+        } else{
+            console.log("less than 3");
+        }
+
+        if (a>1) console.log("over 1");
+        else {
+            if(a>2) console.log("over 2");
+            else{
+                if(a>3) console.log("over 3");
+            }
+        }
+        //while문 : while(식)문
+        var i=20;
+        while(i--) console.log(i);
+        console.log(i);
+
+        //falsy:false,0,'',"",null,undefined,NaN <-> truethy
+        
+        var str="abcd";
+        while(str){
+            str=str.substring(0,str.lenght-2);
+        }
+
+        //for문 for(식*; 식; 식) 문
+        //식1 일반적인 식이지만 선언문이 올수 있다.
+        //식2 truthy판정
+        //식3 for의 문이 실행된 후 수행되는 식
+
+        var i;
+        for(i=0; i<10; i++){
+            console.log(i);
+        }
+        if(a>2) for(var j=0;j<10;j++){
+            console.log(j);
+        }
+
+        var f2=function(a){
+            if(a===undefined){
+                a='hello'
+            }
+            console.log(a)
+        }
+        f2('greeting');
+        f2();
+
+        
+        </script>
+    </body>
+</html>
