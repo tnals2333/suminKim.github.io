@@ -1,0 +1,46 @@
+<html>
+<head></head>
+<body>
+    <p id="test">data</p>
+    <div>
+        <div>inner</div>
+    </div>
+<script>
+//DOM Document Object Model
+var body = document.body;
+console.log(body.children[1].children[0].innerHTML);
+console.log(document.getElementsByTagName("div"));
+console.log(document.getElementById("test").innerHTML = "안녕하세요");
+
+
+var panel = document.getElementById("test");
+var log = function(data){
+    panel.innerHTML = data;
+};
+var brightness=function(color){
+    panel.styl.backgroundColor = "rgb("+color+","+color+","+color+")"
+};
+var msg="hello";
+panel.addEventListener("click", function(event){
+    alert(msg);
+});
+panel.addEventListener("mouseover", function(event){
+   brightness(200);
+});
+panel.addEventListener("mouseout", function(event){
+    brightness(255);
+});
+//  (f)();->함수바로실행 이름없음 따라서한번실행하고끝
+/*
+var count = 0;
+setInterval(function(){
+    if(count<255){
+        count++;
+    }else count = 0;
+    log(count);
+    brightness(count);
+},100);
+*/
+</script>
+</body>
+</html>

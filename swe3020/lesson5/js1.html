@@ -1,0 +1,35 @@
+<html>
+<head>
+
+</head>
+<body>
+<script>
+//리터럴 - 더이상 쪼갤 수 없는 값의 표현
+//숫자 리터럴 1 1.2 0.35 -4
+//문자 리터럴 "1111" '34545'
+//불린 null undefined
+//객체리터럴
+//오브젝트 리터럴 {k:v, K:v...}
+//배열리터럴 [e1,e2,...]
+//정규식리터럴 /정규식표현/
+//함수리터럴 function[이름](인자...){}
+
+//hashmap hash+map -> hashfunction을 이용하는 map의 자료구조
+//key에는 문자열만 들어올수있음.
+var test={"f":"function","b":"boolean",n:"number",
+"a0":"aaa",
+"a1":"bbb",
+"a2":"ccc",
+"a3":"ddd"
+};
+test.abc=1234;
+//test[식=값=>문자열로 변환]
+console.log(test.abc,test.f,test.b,test.n,test[0]);
+
+for(var i=0;i<4;i++){
+    console.log(test["a"+i]);
+}
+
+</script>
+</body>
+</html>
