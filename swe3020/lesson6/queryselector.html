@@ -1,0 +1,68 @@
+<html>
+<head>
+    <style>
+    ul>li>div{
+        color:red;
+    }
+    </style>
+</head>
+<body>
+<div></div>
+<ul>
+    <li>item1</li>
+    <li>item2<div>special item</div></li>
+    <li>item3<div>special item2</div></li>
+    <li id="test">item4</li>
+    <li>item5</li>
+</ul>
+<ul id="imageList">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<img id="dog"/>
+<script>
+var div = document.querySelector("ul > li > div");
+div.style.color="blue";
+var divs = document.querySelectorAll("ul > li > div");
+for(var i=0;i<divs.length;i++){
+    divs[i].style.background = "grey";
+}
+var item4 = document.querySelector("#test");
+item4.style.color="green";
+
+//1.스타일을 변경한다 - element.style.xxx
+//2.속성을 변경한다 - img.src=aa.jpg
+//3.이벤트를 건다 - element.onclick=function(){...}
+//4.innerHTML을 사용한다 - div.innerHTML="hello world"
+
+var images = [
+    {
+        name:"Spitz1",
+        data:"aa.jpg"
+    },
+    {
+        name:"Spitz2",
+        data:"bb.jpg"
+    },
+    {
+        name:"Spitz3",
+        data:"cc.jpg"
+    }
+]
+var items=document.querySelectorAll("#imgList>li");
+var display=document.querySelector("#dog");
+for(var i=0;i<items.length;i++){
+    var li=items[i];
+    li.style.cssText="font-size:20px;color:#a00;cursor:pointer";
+    li.innerHTML=images[i].name;
+    (function() {
+        var src=images[i].data;
+        li.onclick=function(){
+            display.src=src;
+        }
+    })()    
+}
+</script>
+</body>
+</html>
