@@ -22,6 +22,14 @@
             "name":"task3",
             "createDate":"2017-11-12",
             "dueDate":"2011-11-18",
+            "checked":true, 
+            "done":true
+        },
+        {
+            "id":"2",
+            "name":"task4",
+            "createDate":"2017-11-12",
+            "dueDate":"2011-11-18",
             "checked":false, 
             "done":false
         }

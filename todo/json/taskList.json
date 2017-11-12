@@ -16,6 +16,14 @@
             "dueDate":"2011-11-17",
             "checked":false, 
             "done":false
+        },
+        {
+            "id":"2",
+            "name":"task3",
+            "createDate":"2017-11-12",
+            "dueDate":"2011-11-18",
+            "checked":true, 
+            "done":true
         }
     ]
 } 
