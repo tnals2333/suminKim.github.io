@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<script 
+src="https://code.jquery.com/jquery-3.2.1.min.js" 
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+crossorigin="anonymous"></script> 
+<script> 
+var input = document.createElement("input");
+input.name="test";
+input.type="text";
+input.value="test";
+document.body.appendChild(input);
+
+var a=$('<input type="text" name="test" value="test"/>')
+document.body.appendChild(a[0]);
+var obj={
+    "a":function(){},
+    "b":new Date()
+};
+console.log(JSON.parse('{"a":3,"b":5}').b);
+
+
+</script>
+</body>
+</html>
