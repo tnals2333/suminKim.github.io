@@ -1,0 +1,31 @@
+{
+    "result":"ok",
+    "data":[
+        {
+            "themeid":1,
+            "color":"blue",
+            "background":["mountain","tower","car","airplane","house","none"]    
+        },
+        {
+            "themeid":2,
+            "color":"orange",
+            "background":["mountain","tower","car","airplane","house","none"]    
+        },
+        {
+            "themeid":3,
+            "color":"purple",
+            "background":["mountain","tower","car","airplane","house","none"]    
+        },
+        {
+            "themeid":4,
+            "color":"green",
+            "background":["mountain","tower","car","airplane","house","none"]    
+        },
+        {
+            "themeid":5,
+            "color":"skyblue",
+            "background":["mountain","tower","car","airplane","house","none"]    
+        },
+        
+    ]
+}            
