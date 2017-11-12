@@ -6,6 +6,7 @@
             "name":"task1",
             "createDate":"2017-11-10",
             "dueDate":"2017-11-12",
+            "myDay":true,
             "checked":true, 
             "done":true
         },
@@ -14,6 +15,7 @@
             "name":"task2",
             "createDate":"2017-11-11",
             "dueDate":"2011-11-17",
+            "myDay":false,
             "checked":false, 
             "done":false
         },
@@ -22,14 +24,16 @@
             "name":"task3",
             "createDate":"2017-11-12",
             "dueDate":"2011-11-18",
+            "myDay":false,
             "checked":true, 
             "done":true
         },
         {
-            "id":"2",
+            "id":"3",
             "name":"task4",
             "createDate":"2017-11-12",
             "dueDate":"2011-11-18",
+            "myDay":true,
             "checked":false, 
             "done":false
         }

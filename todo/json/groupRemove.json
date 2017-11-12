@@ -14,6 +14,13 @@
             "color":"blue",
             "icon":"home",
             "count":0
+        },
+        {
+            "id":3,
+            "name":"group1", 
+            "color":"blue",
+            "icon":"list",
+            "count":0
         }
     ]
 }

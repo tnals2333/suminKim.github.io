@@ -4,27 +4,32 @@
         {
             "sortid":1,
             "icon":"udarrow",
-            "name":"제목"
+            "name":"제목",
+            "order":{}
         },
         {
             "sortid":2,
             "icon":"calendar",
-            "name":"기한"
+            "name":"기한",
+            "order":{}
         },
         {
             "sortid":3,
             "icon":"plus",
-            "name":"만든 날짜"
+            "name":"만든 날짜",
+            "order":{}
         },
         {
             "sortid":4,
             "icon":"checked",
-            "name":"완료됨"
+            "name":"완료됨",
+            "order":{}
         },
         {
             "sortid":5,
             "icon":"sun",
-            "name":"나의 하루에 추가됨"
-        },
+            "name":"나의 하루에 추가됨",
+            "order":{}
+        }
     ]
 }
