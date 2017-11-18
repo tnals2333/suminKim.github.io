@@ -17,7 +17,14 @@
         },
         {
             "id":3,
-            "name":"new group", 
+            "name":"group1", 
+            "color":"blue",
+            "icon":"list",
+            "count":0
+        },
+        {
+            "id":4,
+            "name":"group2", 
             "color":"blue",
             "icon":"list",
             "count":0

@@ -1,0 +1,34 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+
+        <style>
+            ul{list-style:none}
+            </style>
+        
+<ul id = "list">
+
+</ul>
+
+
+        <script
+        src = "http://code.jquery.com/jquery-3.2.1.min.js"
+        integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        <script>
+         
+         $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",function(result, status){
+
+              console.log(result.data[0]);
+              var arr = result.data;
+              var list = "";
+              for(var i = 0; i<arr.length; i++){
+                list += "<li>"+ '<span style="color:"' + arr[i].color + ">&#9776;</span>" + arr[i].name + "</li>"
+              }
+              $('#list').html(list);
+          });
+        </script>
+    </body>
+</html>

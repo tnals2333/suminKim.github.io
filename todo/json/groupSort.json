@@ -2,34 +2,32 @@
     "result":"ok",
     "data":[
         {
-            "sortid":1,
-            "icon":"udarrow",
-            "name":"제목",
-            "order":{}
-        },
-        {
-            "sortid":2,
-            "icon":"calendar",
-            "name":"기한",
-            "order":{}
-        },
-        {
-            "sortid":3,
-            "icon":"plus",
-            "name":"만든 날짜",
-            "order":{}
-        },
-        {
-            "sortid":4,
-            "icon":"checked",
-            "name":"완료됨",
-            "order":{}
-        },
-        {
-            "sortid":5,
+            "id":1,
+            "name":"오늘 할 일", 
+            "color":"blue",
             "icon":"sun",
-            "name":"나의 하루에 추가됨",
-            "order":{}
+            "count":0
+        },
+        {
+            "id":2,
+            "name":"To-Do", 
+            "color":"blue",
+            "icon":"home",
+            "count":0
+        },
+        {
+            "id":3,
+            "name":"group1", 
+            "color":"blue",
+            "icon":"list",
+            "count":0
+        },
+        {
+            "id":4,
+            "name":"group2", 
+            "color":"blue",
+            "icon":"list",
+            "count":0
         }
     ]
 }
