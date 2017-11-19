@@ -3,7 +3,7 @@
     "data":[
         {
             "id":1,
-            "name":"group1", 
+            "name":"제목 없는 목록", 
             "color":"blue",
             "icon":"list",
             "count":0

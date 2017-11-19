@@ -63,21 +63,39 @@ var symbol={
     "home":"&#8962;",
     "list":"&#9776;"
 }
-var arr;
+
+
 $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",function(result, status){
-    console.log(result.data[0]);
-    arr = result.data;
+    var arr = result.data;
     var list = "";
     for(var i = 0; i<arr.length; i++){
-    list += "<li>"+ "<em class='icon' style=color:" + arr[i].color + ">" + symbol[arr[i].icon] + "</em>"
+    list += "<li id="+arr[i].id+">"+ "<em class='icon' style=color:" + arr[i].color + ">" + symbol[arr[i].icon] + "</em>"
      + "<a href='#'>"+ arr[i].name + "</a>"+"<span class='count'>"+arr[i].count+"</span>"+"</li>"
-}
+    }
+    
+    list += "<li id='add' style='color:blue'><em class='icon' >&#43;</em><a href='#'>새 목록</a></li>";
+    
+    $('#list').html(list);
 
-var addGroup = "<li id='add' style='color:blue'><em class='icon' >&#43;</em><a href='#' onclick=>새 목록</a></li>";
-list += addGroup;
-$('#list').html(list);
-
+    $('#add').click(function(){
+        var n=prompt("새 목록:","제목 없는 목록");
+        var arr2=[
+            {
+                "id":arr.length+1,
+                "name":n, 
+                "color":"blue",
+                "icon":"list",
+                "count":0
+            }
+        ]
+        arr[arr.length]=arr2[0];
+        $('#'+arr[arr.length-2].id).after("<li id="+ arr[arr.length-1].id +">"+"<em class='icon' style=color:" + arr[arr.length-1].color + ">" + symbol[arr[arr.length-1].icon] + "</em>"
+             + "<a href='#'>"+arr[arr.length-1].name  + "</a>"+"<span class='count'>"+arr[arr.length-1].count+"</span>"+"</li>");
+        
+    });
 });
+
+
 </script>
 </body>
 </html>
