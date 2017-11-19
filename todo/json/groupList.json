@@ -17,15 +17,29 @@
         },
         {
             "id":3,
-            "name":"group1", 
+            "name":"Group1", 
             "color":"violet",
             "icon":"list",
             "count":0
         },
         {
             "id":4,
-            "name":"group2", 
+            "name":"Group2", 
+            "color":"green",
+            "icon":"list",
+            "count":0
+        },
+        {
+            "id":5,
+            "name":"Group3", 
             "color":"orange",
+            "icon":"list",
+            "count":0
+        },
+        {
+            "id":6,
+            "name":"Group4", 
+            "color":"skyblue",
             "icon":"list",
             "count":0
         }
