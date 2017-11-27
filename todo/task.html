@@ -71,6 +71,19 @@
         position:relative;
         top:-4px; 
     }
+    ul li a.done{
+        text-decoration:line-through;
+        color:black;
+        display:block;
+        float:left;
+        text-align:left;
+        width:180px;
+        height:15px;
+        font-size:15px;
+        white-space: nowrap;
+        position:relative;
+        top:-4px; 
+    }
     
     em.icon, a.icon{
         display:block;
@@ -119,7 +132,7 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/taskList.json",f
     list="";
     for(var i=0;i<arr.length;i++){
         if(arr[i].id==val){
-            list+="<li>"+ "<input type='checkbox' id='cb'class='icon'"+arr[i].check+"/><label for='cb'></label><a class="+arr[i].do+"href='#'>"+ arr[i].name + "</a></li>";
+            list+="<li>"+ "<input type='checkbox' id='cb'class='icon'"+arr[i].check+"/><label for='cb'></label><a class="+ arr[i].do + " href='#'>"+ arr[i].name + "</a></li>";
         }
         $('#tasks').html(list);
     }      
