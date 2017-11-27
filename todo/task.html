@@ -24,32 +24,6 @@
         text-align:center;
         margin:0px 5px;   
     }
-    input[id="cb"] + label {
-        display:block;
-        float: left;
-        width: 14px;
-        height: 14px;
-        border-radius: 7px;
-        background-color:white;
-        cursor: pointer;
-        border:1px solid grey;
-        margin:0px 5px;   
-      }
-      input[id="cb"]:checked + label:after {
-        background-color: rgb(75, 214, 32);
-        content:'\2714';
-        color:white;
-        font-size:14px;
-        width: 14px;
-        height: 14px;
-        border-radius: 7px;
-        display:block;
-        float: left;
-        text-align:center;
-      }
-      input[id="cb"] {
-        display: none;
-      }
     
     ul li{
         display:block;
@@ -58,7 +32,7 @@
         border-bottom:1px solid #AAAAAA;
         padding-top:12px;
     }
-    ul li a{
+    ul li label{
         text-decoration:none;
         color:black;
         display:block;
@@ -71,7 +45,7 @@
         position:relative;
         top:-4px; 
     }
-    ul li a.done{
+    ul li label #done{
         text-decoration:line-through;
         color:black;
         display:block;
@@ -98,7 +72,6 @@
         color:white;
         padding-top:6px;
         text-decoration: none;
-
     }
 
 </style>
@@ -108,7 +81,8 @@
 <div id="section">
     <ul id="tasks"></ul>
 </div>
-        
+<div id="footer">
+</div>        
 <script
 src = "https://code.jquery.com/jquery-3.2.1.min.js"
 integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -132,12 +106,19 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/taskList.json",f
     list="";
     for(var i=0;i<arr.length;i++){
         if(arr[i].id==val){
-            list+="<li>"+ "<input type='checkbox' id='cb'class='icon'"+arr[i].check+"/><label for='cb'></label><a class="+ arr[i].do + " href='#'>"+ arr[i].name + "</a></li>";
+            list+="<li>"+ "<input type='checkbox' class='icon'"+arr[i].check+"/><label>"+arr[i].name+"</label></li>";
+            var checkBox=document.createElement("input");
+            var label=document.createElement("label");
         }
         $('#tasks').html(list);
-    }      
+    }
+    
+var add_list= "<li id='add' style='color:blue'><em class='icon' >&#43;</em><a href='#'>할 일 추가</a></li>";
+
     });
 });
+
+
 </script>
 
 
