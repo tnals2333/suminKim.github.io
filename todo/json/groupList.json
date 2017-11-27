@@ -4,7 +4,7 @@
         {
             "id":1,
             "name":"오늘 할 일", 
-            "color":"blue",
+            "color":"#656fc8",
             "icon":"sun",
             "count":0
         },
@@ -18,7 +18,7 @@
         {
             "id":3,
             "name":"Group1", 
-            "color":"violet",
+            "color":"purple",
             "icon":"list",
             "count":0
         },

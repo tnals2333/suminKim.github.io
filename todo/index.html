@@ -1,60 +1,61 @@
 <html>
 <head>
-
+    <style>
+        div.wraplist, div.add{
+            width:350px;
+        }
+        ul{
+            list-style:none;
+            font-size:15px;
+            margin:0;
+        }
+        ul li em.icon{
+            display:block;
+            float: left;
+            width:15px;
+            height:15px;
+            text-align:center;
+            margin-right:9px;
+            font-size:12px;
+            font-family:sans-serif;
+            font-style:normal;
+        }
+        
+        ul li{
+            line-height:28px;
+        }
+        ul li a{
+            text-decoration:none;
+            color:black;
+            display:block;
+            float:left;
+            text-align:left;
+            width:180px;
+            height:15px;
+            font-size:12px;
+            white-space: nowrap;
+    
+        }
+        ul li span.count{
+            color:grey;
+            font-size:12px;
+            height:15px;
+        
+        }
+        ul li#add a{
+            color:blue;
+        }
+        
+    </style> 
 </head>
 <body>
-
-<style>
-    div.wraplist{
-        width:350px;
-    }
-    ul{
-        list-style:none;
-        font-size:15px;
-    }
-    ul li em.icon{
-        display:block;
-        float: left;
-        width:15px;
-        height:15px;
-        text-align:center;
-        margin-right:9px;
-        font-size:12px;
-        font-family:sans-serif;
-        font-style:normal;
-    }
-    
-    ul li{
-        line-height:28px;
-    }
-    ul li a{
-        text-decoration:none;
-        color:black;
-        display:block;
-        float:left;
-        text-align:left;
-        width:180px;
-        height:15px;
-        font-size:12px;
-        white-space: nowrap;
-
-    }
-    ul li span.count{
-        color:grey;
-        font-size:12px;
-        height:15px;
-    
-    }
-    ul li#add a{
-        color:blue;
-    }
-    
-</style>
-<div class=wraplist>
+<div class="wraplist">
     <ul id = "list"></ul>
+    <ul id="adding"></ul>
 </div>
+
 <script
-src = "http://code.jquery.com/jquery-3.2.1.min.js"
+src = "https://code.jquery.com/jquery-3.2.1.min.js"
 integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>
 <script>
@@ -64,7 +65,6 @@ var symbol={
     "list":"&#9776;"
 }
 
-
 $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",function(result, status){
     var arr = result.data;
     var list = "";
@@ -73,9 +73,10 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",
      + "<a href='#'>"+ arr[i].name + "</a>"+"<span class='count'>"+arr[i].count+"</span>"+"</li>"
     }
     
-    list += "<li id='add' style='color:blue'><em class='icon' >&#43;</em><a href='#'>새 목록</a></li>";
+    var add_list= "<li id='add' style='color:blue'><em class='icon' >&#43;</em><a href='#'>새 목록</a></li>";
     
     $('#list').html(list);
+    $('#adding').html(add_list);
 
     $('#add').click(function(){
         var n=prompt("새 목록:","제목 없는 목록");
@@ -90,12 +91,19 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",
         ]
         arr[arr.length]=arr2[0];
         $('#'+arr[arr.length-2].id).after("<li id="+ arr[arr.length-1].id +">"+"<em class='icon' style=color:" + arr[arr.length-1].color + ">" + symbol[arr[arr.length-1].icon] + "</em>"
-             + "<a href='#'>"+arr[arr.length-1].name  + "</a>"+"<span class='count'>"+arr[arr.length-1].count+"</span>"+"</li>");
-        
+             + "<a href='task.html'>"+arr[arr.length-1].name  + "</a>"+"<span class='count'>"+arr[arr.length-1].count+"</span>"+"</li>");
+       
+    });
+});
+$(function($){
+    $('#list').click(function(e){
+    var dd = e.target.closest("li").getAttribute('id');
+    window.location.href= "task.html?id="+dd;
     });
 });
 
 
 </script>
+
 </body>
 </html>

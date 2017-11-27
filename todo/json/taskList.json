@@ -7,8 +7,8 @@
             "createDate":"2017-11-10",
             "dueDate":"2017-11-12",
             "myDay":true,
-            "checked":true, 
-            "done":true
+            "check":"checked", 
+            "do":"done"
         },
         {
             "id":"2",
@@ -16,8 +16,8 @@
             "createDate":"2017-11-11",
             "dueDate":"2011-11-17",
             "myDay":false,
-            "checked":false, 
-            "done":false
+            "check":"nocheck", 
+            "do":"yet"
         }
     ]
 } 

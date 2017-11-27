@@ -1,0 +1,132 @@
+<html>
+<head>
+<style>
+    
+    h3{
+        width:350px;
+        height:40px;
+        color:white;
+        margin:0;
+        padding-top:12px;
+        
+    }
+    ul{
+        list-style:none;
+        font-size:15px;
+        margin:0;
+        padding:0;
+    }
+    ul li input{
+        display:block;
+        float: left;
+        width:15px;
+        height:15px;
+        text-align:center;
+        margin:0px 5px;   
+    }
+    input[id="cb"] + label {
+        display:block;
+        float: left;
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        background-color:white;
+        cursor: pointer;
+        border:1px solid grey;
+        margin:0px 5px;   
+      }
+      input[id="cb"]:checked + label:after {
+        background-color: rgb(75, 214, 32);
+        content:'\2714';
+        color:white;
+        font-size:14px;
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+        display:block;
+        float: left;
+        text-align:center;
+      }
+      input[id="cb"] {
+        display: none;
+      }
+    
+    ul li{
+        display:block;
+        height:28px;
+        width:350;
+        border-bottom:1px solid #AAAAAA;
+        padding-top:12px;
+    }
+    ul li a{
+        text-decoration:none;
+        color:black;
+        display:block;
+        float:left;
+        text-align:left;
+        width:180px;
+        height:15px;
+        font-size:15px;
+        white-space: nowrap;
+        position:relative;
+        top:-4px; 
+    }
+    
+    em.icon, a.icon{
+        display:block;
+        float: left;
+        width:40px;
+        height:40px;
+        text-align:center;
+        margin-right:6px;
+        font-size:25px;
+        font-family:sans-serif;
+        font-style:normal;
+        color:white;
+        padding-top:6px;
+        text-decoration: none;
+
+    }
+
+</style>
+</head>
+<body>
+<div id="header"></div>
+<div id="section">
+    <ul id="tasks"></ul>
+</div>
+        
+<script
+src = "https://code.jquery.com/jquery-3.2.1.min.js"
+integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous"></script>
+<script>
+var val;
+$(document).ready(function(){
+    var val=location.href.substr(
+        location.href.lastIndexOf('=')+1);
+$.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",function(result, status){
+    var arr = result.data;
+    for(var i = 0; i<arr.length; i++){
+        if(arr[i].id==val){
+            var groupName="<a class='icon' href='index.html'>&#9776;</a><h3 style=background-color:"+arr[i].color+">"+arr[i].name+"</h3>";
+            $('#header').html(groupName);
+        }
+    }
+});
+$.get("https://tnals2333.github.io/suminKim.github.io/todo/json/taskList.json",function(result, status){
+    var arr = result.data;
+    list="";
+    for(var i=0;i<arr.length;i++){
+        if(arr[i].id==val){
+            list+="<li>"+ "<input type='checkbox' id='cb'class='icon'"+arr[i].check+"/><label for='cb'></label><a class="+arr[i].do+"href='#'>"+ arr[i].name + "</a></li>";
+        }
+        $('#tasks').html(list);
+    }      
+    });
+});
+</script>
+
+
+</body>
+</html>
