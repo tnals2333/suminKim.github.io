@@ -23,9 +23,7 @@
         text-align:center;
         margin:0px 5px;     
     }
-    .checked {
-    text-decoration: line-through;
-    }
+    
     ul li{
         display:block;
         height:28px;
@@ -33,18 +31,8 @@
         border-bottom:1px solid #AAAAAA;
         padding-top:12px;
     }
-    ul li label{
-        text-decoration:none;
-        color:black;
-        display:block;
-        float:left;
-        text-align:left;
-        width:180px;
-        height:15px;
-        font-size:15px;
-        white-space: nowrap;
-        position:relative;
-        top:-4px; 
+    .box:checked + .checkedLabel {
+        text-decoration:line-through;
     }
     a.icon{
         display:block;
@@ -92,6 +80,7 @@ var val;
 $(document).ready(function(){
     var val=location.href.substr(
         location.href.lastIndexOf('=')+1);
+        
 $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",function(result, status){
     var arr = result.data;
     for(var i = 0; i<arr.length; i++){
@@ -101,22 +90,28 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",
         }
     }
 });
+
 $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/taskList.json",function(result, status){
     var arr = result.data;
     list="";
-    for(var i=0;i<arr.length;i++){
-        if(arr[i].id==val){
-            list+="<li>"+ "<input type='checkbox' class='box'/>"+arr[i].name+"</li>";
-        }
-        var add_list= "<li id='add' style='color:blue'><em class='icon' >&#43;</em><span>할 일 추가</span></li>";
-        $('#tasks').html(list);
-        $('#adding').html(add_list);
 
+    var print_task = function(arr,list){
+        for(var i=0;i<arr.length;i++){
+            if(arr[i].id==val){
+                list+="<li>"+ "<input type='checkbox' id="+ arr[i].tid + " class='box' "+ arr[i].check + "/><label for="+arr[i].tid +" class='checkedLabel'>"+arr[i].name+"</label></li>";
+            }
+        }
+        
+        $('#tasks').html(list);
+    }
+
+    var add = function(){
         $('#add').click(function(){
-        var n=prompt("새 할일");
-        var arr2=[
+        var n=prompt("새 할일","제목 없음");
+        arr[arr.length]=
             {
-                "id":arr[i].id,
+                "id":val,
+                "tid":arr.length,
                 "name":n, 
                 "createDate":"2017-11-22",
                 "dueDate":"2017-11-30",
@@ -124,18 +119,20 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/taskList.json",f
                 "check":"nocheck", 
                 "do":"yet"
             }
-        ]
-        arr[arr.length]=arr2[0];
-        $('.box').after("<li>"+ "<input type='checkbox' class='box'/>"+arr[i].name+"</li>");
-       
+        list=""
+        print_task(arr,list);
     });
-        var elems = document.getElementsByClassName('box');
-        Array.from(elems).forEach(v => v.addEventListener('change', function(){
-        this.parentNode.classList.toggle('checked');
-    }));   
     }
+    print_task(arr,list);
+    add()
+
+       
+    
+    
     });
 });
+var add_list= "<li id='add' style='color:blue'><em class='icon' >&#43;</em><span>할 일 추가</span></li>";
+$('#adding').html(add_list);
 
 
 
