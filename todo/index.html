@@ -92,6 +92,7 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",
     var add = function(){
         $('#add').click(function(){
         var n=prompt("새 목록:","제목 없는 목록");
+        if(n===null) return;
         arr[arr.length]=
             {
                 "id":arr.length,
@@ -100,11 +101,12 @@ $.get("https://tnals2333.github.io/suminKim.github.io/todo/json/groupList.json",
                 "icon":"list",
                 "count":0
             };
+        
         list="";
         print_list(arr,list);
+        
         });
     }
-    
     print_list(arr,list);
     add()
 });
